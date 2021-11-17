@@ -1,19 +1,19 @@
 {
-	"scripts": {
-		"start": "ts-node ./app/index.ts",
-		"deploy": "ts-node ./app/interactions/commands-deploy.ts"
-	},
-	"dependencies": {
-		"@discordjs/builders": "^0.8.2",
-		"@discordjs/rest": "^0.1.0-canary.0",
-		"discord-api-types": "^0.24.0",
-		"discord.js": "^13.3.1"
-	},
-	"devDependencies": {
-		"@types/i18n": "^0.13.1",
-		"prettier": "2.4.1",
-		"ts-node": "^10.4.0",
-		"tslint": "^5.12.1",
-		"typescript": "^3.9.10"
-	}
+  "scripts": {
+    "start": "ts-node ./app/index.ts",
+    "deploy": "ts-node ./app/interactions/commands-deploy.ts"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.8.2",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "discord-api-types": "^0.24.0",
+    "discord.js": "^13.3.1"
+  },
+  "devDependencies": {
+    "@types/i18n": "^0.13.1",
+    "prettier": "2.4.1",
+    "ts-node": "^10.4.0",
+    "tslint": "^5.12.1",
+    "typescript": "^3.9.10"
+  }
 }

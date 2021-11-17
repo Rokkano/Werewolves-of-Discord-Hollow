@@ -1,3 +1,1 @@
-export class Player {
-    
-}
+export class Player {}
