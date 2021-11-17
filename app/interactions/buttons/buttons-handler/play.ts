@@ -3,8 +3,6 @@ import {
   CacheType,
   MessageActionRow,
   MessageButton,
-  MessageButtonStyleResolvable,
-  MessagePayload,
 } from "discord.js";
 
 import { IButton } from "../buttons";
