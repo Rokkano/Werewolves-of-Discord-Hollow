@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "start": "ts-node ./app/index.ts",
-    "deploy": "ts-node ./app/interactions/commands-deploy.ts"
+    "start": "(ts-node ./app/deploy.ts) & (ts-node ./app/main.ts)",
+    "main": "ts-node ./app/main.ts",
+    "deploy": "ts-node ./app/deploy.ts"
   },
   "dependencies": {
     "@discordjs/builders": "^0.8.2",

@@ -1,12 +1,15 @@
 import {
   ButtonInteraction,
   CacheType,
+  Client,
   EmojiIdentifierResolvable,
   MessageButton,
   MessageButtonStyleResolvable,
 } from "discord.js";
 
-import { buttonPlay } from "./buttons-handler/play";
+import { buttonDebug } from "./buttons-handler/debug";
+import { buttonJoin } from "./buttons-handler/join";
+import { buttonLeave } from "./buttons-handler/leave";
 
 export interface IButton {
   label?: string;
@@ -16,9 +19,15 @@ export interface IButton {
   url?: string;
   disabled?: boolean;
 
-  handler: (interaction: ButtonInteraction<CacheType>) => Promise<void>;
-  builder: () => MessageButton;
+  handler: (
+    client: Client,
+    interaction: ButtonInteraction<CacheType>
+  ) => Promise<void>;
+  builder: (client?: Client) => MessageButton;
 }
 
 export const buttonList: IButton[] = [];
-buttonList.push(buttonPlay);
+
+buttonList.push(buttonJoin);
+buttonList.push(buttonLeave);
+buttonList.push(buttonDebug);

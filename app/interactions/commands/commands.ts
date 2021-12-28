@@ -1,5 +1,6 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
-import { CacheType, CommandInteraction } from "discord.js";
+import { CacheType, Client, CommandInteraction } from "discord.js";
+
 import { commandLobby } from "./commands-handlers/lobby";
 import { commandSelect } from "./commands-handlers/select";
 
@@ -22,8 +23,11 @@ export interface ICommand {
   optionRole?: optionDef[];
   optionMentionable?: optionDef[];
 
-  handler: (interaction: CommandInteraction<CacheType>) => Promise<void>;
-  builder: () => SlashCommandBuilder;
+  handler: (
+    client: Client,
+    interaction: CommandInteraction<CacheType>
+  ) => Promise<void>;
+  builder: (client?: Client) => SlashCommandBuilder;
 }
 
 export const commandList: ICommand[] = [];

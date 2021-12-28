@@ -93,4 +93,26 @@ export class Debug {
       console.log(payload);
     }
   }
+
+  static gameState(games: any): void {
+    if (this.debugLevel === DebugMode.NULL) return;
+    if (this.debugLevel === DebugMode.PROD) return;
+    if (this.debugLevel === DebugMode.DEV) {
+      console.log(this.formatMessage(DebugFct.DEBUG, "", "160;90;178"));
+      games.forEach((game: any) => {
+        console.log(
+          `${game.guildId}|${game.channelId} ${
+            game.hasStarted ? "not started" : "started"
+          }`
+        );
+        game.players.forEach((player: any) => {
+          console.log(
+            `		>${player.displayName} is a ${
+              player.role ? player.role : "nothing"
+            }`
+          );
+        });
+      });
+    }
+  }
 }

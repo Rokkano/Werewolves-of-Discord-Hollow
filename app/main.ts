@@ -9,14 +9,14 @@ Debug.setDebugLevel(DebugMode.DEV);
 
 export const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-client.on("interactionCreate", async (interaction) => {
+client.on("interactionCreate", async interaction => {
   if (interaction.isCommand()) {
     const command = commandList.find(
-      (command) => command.name === interaction.commandName
+      command => command.name === interaction.commandName
     );
     if (!command) Debug.error("Command received but not found");
     await command!
-      .handler(interaction)
+      .handler(client, interaction)
       .then(() =>
         Debug.log(`Command received and answered: "${interaction.commandName}"`)
       )
@@ -26,11 +26,11 @@ client.on("interactionCreate", async (interaction) => {
   }
   if (interaction.isButton()) {
     const button = buttonList.find(
-      (button) => button.customId! === interaction.customId
+      button => button.customId! === interaction.customId
     );
     if (!button) Debug.error("Button interaction received but not found");
     await button!
-      .handler(interaction)
+      .handler(client, interaction)
       .then(() =>
         Debug.log(
           `Button interaction received and answered: "${interaction.customId}"`
@@ -59,7 +59,7 @@ client.once("ready", () => {
 });
 
 // Login to Discord with your client's token
-client.login(token).then((resultToken) => {
+client.login(token).then(resultToken => {
   if (resultToken === token) Debug.success(`Client logged in successfully`);
   else
     Debug.error(

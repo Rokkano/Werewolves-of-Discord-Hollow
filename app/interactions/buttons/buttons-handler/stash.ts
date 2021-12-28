@@ -5,25 +5,8 @@ import {
   MessageButton,
 } from "discord.js";
 
-import { IButton } from "../buttons";
-
-export const buttonPlay: IButton = {
-  customId: "buttonPlay",
-  label: "Play with us !",
-  style: "PRIMARY",
-
-  handler: handler,
-  builder: builder,
-};
-
-function builder(): MessageButton {
-  return new MessageButton()
-    .setCustomId(buttonPlay.customId!)
-    .setLabel(buttonPlay.label!)
-    .setStyle(buttonPlay.style!);
-}
-
 async function handler(
+  client: Client,
   interaction: ButtonInteraction<CacheType>
 ): Promise<void> {
   if (interaction.component?.type !== "BUTTON") return;
@@ -37,3 +20,11 @@ async function handler(
   // await interaction.reply("void");
   // button.setDisabled(true);
 }
+
+//export type Interaction =
+//  | AutocompleteInteraction<CacheType>
+//  | ButtonInteraction<CacheType>
+//  | CommandInteraction<CacheType>
+//  | ContextMenuInteraction<CacheType>
+//  | MessageComponentInteraction<CacheType>
+//  | SelectMenuInteraction<CacheType>;
