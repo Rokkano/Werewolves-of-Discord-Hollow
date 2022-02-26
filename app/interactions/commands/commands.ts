@@ -1,8 +1,8 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
 import { CacheType, Client, CommandInteraction } from "discord.js";
 
-import { commandLobby } from "./commands-handlers/lobby";
-import { commandSelect } from "./commands-handlers/select";
+import { commandLobby } from "interactions/commands/commands-handlers/lobby";
+import { commandSelect } from "interactions/commands/commands-handlers/select";
 
 export type optionDef = { name: string; desc: string };
 export const optionDef = (optionDef: optionDef) => (option: any) =>

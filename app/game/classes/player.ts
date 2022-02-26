@@ -1,4 +1,4 @@
-import { Roles } from "../enums/roles";
+import { Roles } from "game/enums/roles";
 
 export class Player {
   id!: string;

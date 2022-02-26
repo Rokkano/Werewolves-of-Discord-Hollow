@@ -1,8 +1,8 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
 import { CacheType, Client, CommandInteraction } from "discord.js";
 
-import { Debug } from "../../../utils/debug";
-import { ICommand, optionDef } from "../commands";
+import { Debug } from "utils/debug";
+import { ICommand, optionDef } from "interactions/commands/commands";
 
 export const commandSelect: ICommand = {
   name: "select",

@@ -6,12 +6,12 @@ import {
   MessageActionRow,
   MessageEmbed,
 } from "discord.js";
-import { createGame } from "../../../game/game";
+import { createGame } from "game/game";
 
-import { buttonDebug } from "../../buttons/buttons-handler/debug";
-import { buttonJoin } from "../../buttons/buttons-handler/join";
-import { buttonLeave } from "../../buttons/buttons-handler/leave";
-import { ICommand, optionDef } from "../commands";
+import { buttonDebug } from "interactions/buttons/buttons-handler/debug";
+import { buttonJoin } from "interactions/buttons/buttons-handler/join";
+import { buttonLeave } from "interactions/buttons/buttons-handler/leave";
+import { ICommand, optionDef } from "interactions/commands/commands";
 
 export const commandLobby: ICommand = {
   name: "lobby",

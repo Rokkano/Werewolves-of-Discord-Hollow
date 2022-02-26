@@ -4,8 +4,9 @@ import {
   Client,
   MessageButton,
 } from "discord.js";
-import { games } from "../../../game/game";
-import { Debug } from "../../../utils/debug";
+
+import { games } from "game/game";
+import { Debug } from "utils/debug";
 
 import { IButton } from "../buttons";
 

@@ -2,10 +2,12 @@ import { REST } from "@discordjs/rest";
 import { RESTPostAPIApplicationCommandsJSONBody } from "discord-api-types";
 const { Routes } = require("discord-api-types/v9");
 
-const { clientId, guildId, token } = require("./configs/config.json");
-import { Debug, DebugMode } from "./utils/debug";
+require('app-module-path').addPath(`${__dirname}/`);
+console.log(`${__dirname}/`)
+const { clientId, guildId, token } = require("configs/config.json");
+import { Debug, DebugMode } from "utils/debug";
 
-import { commandList } from "./interactions/commands/commands";
+import { commandList } from "interactions/commands/commands";
 
 Debug.setDebugLevel(DebugMode.DEV);
 Debug.log("Deploying commands on the Discord REST API");

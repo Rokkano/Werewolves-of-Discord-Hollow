@@ -7,9 +7,9 @@ import {
   MessageButtonStyleResolvable,
 } from "discord.js";
 
-import { buttonDebug } from "./buttons-handler/debug";
-import { buttonJoin } from "./buttons-handler/join";
-import { buttonLeave } from "./buttons-handler/leave";
+import { buttonDebug } from "interactions/buttons/buttons-handler/debug";
+import { buttonJoin } from "interactions/buttons/buttons-handler/join";
+import { buttonLeave } from "interactions/buttons/buttons-handler/leave";
 
 export interface IButton {
   label?: string;

@@ -1,7 +1,8 @@
 import { GuildMember, User } from "discord.js";
-import { Debug } from "../utils/debug";
-import { Player } from "./classes/player";
-import { games } from "./game";
+
+import { Debug } from "utils/debug";
+import { Player } from "game/classes/player";
+import { games } from "game/game";
 
 export function joinGame(guildId: string, member: GuildMember): void {
   Debug.log(`User ${member.displayName} joined the lobby`);

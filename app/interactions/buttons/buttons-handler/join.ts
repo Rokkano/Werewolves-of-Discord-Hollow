@@ -5,10 +5,11 @@ import {
   GuildMember,
   MessageButton,
 } from "discord.js";
-import { joinGame } from "../../../game/player";
-import { Debug } from "../../../utils/debug";
 
-import { IButton } from "../buttons";
+import { joinGame } from "game/player";
+import { Debug } from "utils/debug";
+
+import { IButton } from "interactions/buttons/buttons";
 
 export const buttonJoin: IButton = {
   customId: "buttonJoin",

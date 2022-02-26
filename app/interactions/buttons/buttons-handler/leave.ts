@@ -5,10 +5,11 @@ import {
   GuildMember,
   MessageButton,
 } from "discord.js";
-import { leaveGame } from "../../../game/player";
-import { Debug } from "../../../utils/debug";
 
-import { IButton } from "../buttons";
+import { leaveGame } from "game/player";
+import { Debug } from "utils/debug";
+
+import { IButton } from "interactions/buttons/buttons";
 
 export const buttonLeave: IButton = {
   customId: "buttonLeave",

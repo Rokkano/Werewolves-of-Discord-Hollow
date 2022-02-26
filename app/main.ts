@@ -1,9 +1,12 @@
 import { Client, Intents } from "discord.js";
 
-import { buttonList } from "./interactions/buttons/buttons";
-import { commandList } from "./interactions/commands/commands";
-import { Debug, DebugMode } from "./utils/debug";
-const { token, prefix } = require("./configs/config.json");
+// Using app-module-path module to resolve non-relatives import paths
+require('app-module-path').addPath(`${__dirname}/`);
+
+import { buttonList } from "interactions/buttons/buttons";
+import { commandList } from "interactions/commands/commands";
+import { Debug, DebugMode } from "utils/debug";
+const { token, prefix } = require("configs/config.json");
 
 Debug.setDebugLevel(DebugMode.DEV);
 

@@ -1,4 +1,4 @@
-import { Player } from "./player";
+import { Player } from "game/classes/player";
 
 export class Game {
   guildId!: string;

@@ -3,13 +3,13 @@
     "target": "es6",
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./app",
+    "rootDir": ".",
+    "baseUrl": ".",
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["app/*"]
+      "*" : ["app/*"]
     }
   },
   "exclude": ["./node_modules"]

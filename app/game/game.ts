@@ -1,6 +1,7 @@
 import { Client } from "discord.js";
-import { Debug } from "../utils/debug";
-import { Game } from "./classes/game";
+
+import { Debug } from "utils/debug";
+import { Game } from "game/classes/game";
 
 export const games: Map<string, Game> = new Map();
 
