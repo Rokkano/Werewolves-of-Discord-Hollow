@@ -6,7 +6,11 @@
     "rootDir": "./app",
     "strict": true,
     "moduleResolution": "node",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["app/*"]
+    }
   },
   "exclude": ["./node_modules"]
 }
