@@ -22,9 +22,18 @@ export class Debug {
     this.log(`Switched debugLevel to ${DebugMode[debugLevel]}`);
   }
 
+  static help() : void {
+    Debug.log("This is Debug.log")
+    Debug.warn("This is Debug.warn")
+    Debug.error("This is Debug.error")
+    Debug.info("This is Debug.info")
+    Debug.success("This is Debug.success")
+    Debug.debug("This is Debug.debug")
+  }
+
   private static formatDate(): string {
     const date = new Date();
-    return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${(
+    return `${date.getFullYear()}-${("0" + date.getMonth()).slice(-2)}-${("0" + date.getDate()).slice(-2)} ${(
       "0" + date.getHours()
     ).slice(-2)}:${("0" + date.getMinutes()).slice(-2)}:${(
       "0" + date.getSeconds()
@@ -91,6 +100,14 @@ export class Debug {
     if (this.debugLevel === DebugMode.DEV) {
       console.log(this.formatMessage(DebugFct.DEBUG, "", "160;90;178"));
       console.log(payload);
+    }
+  }
+
+  static void(): any {
+    if (this.debugLevel === DebugMode.NULL) return;
+    if (this.debugLevel === DebugMode.PROD) return;
+    if (this.debugLevel === DebugMode.DEV) {
+      console.log(`\x1b[48;2;40;65;80m\x1b[37m-|------------------------------------\x1b[0m`);
     }
   }
 
