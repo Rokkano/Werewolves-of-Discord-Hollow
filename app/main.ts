@@ -2,13 +2,15 @@ import { Client, Intents } from "discord.js";
 
 // Using app-module-path module to resolve non-relatives import paths
 require('app-module-path').addPath(`${__dirname}/`);
+import { Debug, DebugMode } from "utils/debug";
+Debug.setDebugLevel(DebugMode.DEV);
+
+import { LocaleService } from "locales/locale-service";
 
 import { buttonList } from "interactions/buttons/buttons";
 import { commandList } from "interactions/commands/commands";
-import { Debug, DebugMode } from "utils/debug";
-const { token, prefix } = require("configs/config.json");
+const { token, prefix } = require("config/config.json");
 
-Debug.setDebugLevel(DebugMode.DEV);
 
 export const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
@@ -71,6 +73,7 @@ client.login(token).then(resultToken => {
 });
 
 process.on("SIGINT", function () {
+  console.log()
   Debug.error("Disconnecting bot");
 
   // Clearing Node Timers
@@ -81,3 +84,4 @@ process.on("SIGINT", function () {
   client.destroy();
   process.exit();
 });
+
