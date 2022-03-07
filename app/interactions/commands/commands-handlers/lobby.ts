@@ -12,6 +12,7 @@ import { buttonDebug } from "interactions/buttons/buttons-handler/debug";
 import { buttonJoin } from "interactions/buttons/buttons-handler/join";
 import { buttonLeave } from "interactions/buttons/buttons-handler/leave";
 import { ICommand, optionDef } from "interactions/commands/commands";
+import { LocaleService } from "locales/locale-service";
 
 export const commandLobby: ICommand = {
   name: "lobby",
@@ -43,9 +44,9 @@ async function handlerLobby(
     .addComponents(buttonDebug.builder());
   const embed = new MessageEmbed()
     .setColor("#0099ff")
-    .setTitle("Werewolves of Discord Hollow")
+    .setTitle(LocaleService.t("lobby.title"))
     //.setURL("https://discord.js.org")
-    .setDescription("A lobby has been created");
+    .setDescription(LocaleService.t("lobby.description"));
 
   await interaction.reply({
     embeds: [embed],
